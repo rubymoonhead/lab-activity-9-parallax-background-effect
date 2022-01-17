@@ -1,0 +1,102 @@
+/* MY TEMPLATE */
+* {
+	/* Outline to view layout on screen while styling | Remove after styling */
+	/* outline: 1px dashed #ff0075; */
+	margin: 0;
+	padding: 0;
+	font-family: "Quicksand", sans-serif;
+}
+html {
+	box-sizing: border-box;
+	font-size: 100%;
+}
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	background-color: #fef5ed;
+	width: 100%;
+	max-width: 100em;
+	margin: 0 auto;
+}
+
+/* PARALLAX */
+.parallax-img-1 {
+	background: url(https://images.unsplash.com/photo-1591161555818-7b9debeccc07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80)
+		no-repeat fixed 100%;
+	background-size: cover;
+	color: #e0ffff;
+}
+.parallax-img-2 {
+	background: url(https://images.unsplash.com/photo-1490730141103-6cac27aaab94?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80)
+		no-repeat fixed 100%;
+	background-size: cover;
+	color: #acd1af;
+}
+.parallax-img-3 {
+	background: url(https://images.unsplash.com/photo-1581588525251-e1dca48e9827?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80)
+		no-repeat fixed 100%;
+	background-size: cover;
+	color: #af8fe9;
+}
+
+/* PARALLAX headings */
+.section-heading {
+	padding-top: 25%;
+	padding-bottom: 25%;
+}
+h1 {
+	font-size: 10em;
+	text-align: center;
+}
+h2 {
+	color: #150050;
+	margin-left: 3.25em;
+	margin-right: 3.25em;
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+/* FOOTER */
+footer {
+	margin: 1em 1em;
+	padding: 1em 0;
+}
+.footer-flex {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+/* BACK TO TOP button */
+#top-button {
+	display: none;
+	position: fixed;
+	bottom: 1.5em;
+	right: 1.5em;
+	z-index: 2;
+	font-size: 1.5rem;
+	border: none;
+	outline: none;
+	background-color: #150050;
+	color: #e0ffff;
+	cursor: pointer;
+	padding: 0.5em;
+	border-radius: 5px;
+}
+#top-button:hover {
+	background-color: #acd1af;
+}
+
+/* WIP WIP WIP */
+/* Turn off parallax scrolling for tablets and phones */
+@media screen and (max-width: 425px) {
+	.parallax-img-1,
+	.parallax-img-2,
+	.parallax-img-3 {
+		background-attachment: scroll;
+	}
+}
