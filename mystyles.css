@@ -1,10 +1,10 @@
-/* MY TEMPLATE */
+/* MY TEMPLATE RESET */
 * {
 	/* Outline to view layout on screen while styling | Remove after styling */
 	/* outline: 1px dashed #ff0075; */
 	margin: 0;
 	padding: 0;
-	font-family: "Quicksand", sans-serif;
+	scroll-behavior: smooth;
 }
 html {
 	box-sizing: border-box;
@@ -16,31 +16,66 @@ html {
 	box-sizing: inherit;
 }
 
+/* color variables */
+:root {
+	--beige: #fef5ed;
+	--dark-purple: #150050;
+	--baby-blue: #e0ffff;
+	--grayish-light-green: #acd1af;
+	--light-purple: #af8fe9;
+}
+
+/* body styles */
 body {
-	background-color: #fef5ed;
+	font-family: "Quicksand", sans-serif;
+	background-color: var(--beige);
 	width: 100%;
 	max-width: 100em;
 	margin: 0 auto;
 }
 
+/* back to the top button */
+#top-button {
+	display: none;
+	position: fixed;
+	bottom: 1.5em;
+	right: 1.5em;
+	z-index: 2;
+	font-size: 2rem;
+	border: none;
+	outline: none;
+	background-color: var(--dark-purple);
+	color: var(--baby-blue);
+	cursor: pointer;
+	padding: 0.5em;
+	border-radius: 0.25em;
+}
+#top-button:hover {
+	color: var(--dark-purple);
+	background-color: var(--baby-blue);
+}
+
 /* PARALLAX */
+/* first parallax section */
 .parallax-img-1 {
 	background: url(https://images.unsplash.com/photo-1591161555818-7b9debeccc07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80)
 		no-repeat fixed 100%;
 	background-size: cover;
-	color: #e0ffff;
+	color: var(--baby-blue);
 }
+/* second parallax section */
 .parallax-img-2 {
 	background: url(https://images.unsplash.com/photo-1490730141103-6cac27aaab94?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80)
 		no-repeat fixed 100%;
 	background-size: cover;
-	color: #acd1af;
+	color: var(--grayish-light-green);
 }
+/* third parallax section */
 .parallax-img-3 {
 	background: url(https://images.unsplash.com/photo-1581588525251-e1dca48e9827?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80)
 		no-repeat fixed 100%;
 	background-size: cover;
-	color: #af8fe9;
+	color: var(--light-purple);
 }
 
 /* PARALLAX headings */
@@ -53,11 +88,9 @@ h1 {
 	text-align: center;
 }
 h2 {
-	color: #150050;
-	margin-left: 3.25em;
-	margin-right: 3.25em;
-	margin-top: 2em;
-	margin-bottom: 2em;
+	color: var(--dark-purple);
+	margin: 2em 3.25em 2em 3.25em;
+	line-height: 1.5;
 }
 
 /* FOOTER */
@@ -69,34 +102,61 @@ footer {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
+	line-height: 1.5;
 }
 
-/* BACK TO TOP button */
-#top-button {
-	display: none;
-	position: fixed;
-	bottom: 1.5em;
-	right: 1.5em;
-	z-index: 2;
-	font-size: 1.5rem;
-	border: none;
-	outline: none;
-	background-color: #150050;
-	color: #e0ffff;
-	cursor: pointer;
-	padding: 0.5em;
-	border-radius: 5px;
-}
-#top-button:hover {
-	background-color: #acd1af;
+/* laptop styles */
+/* max-width 64em (1024px) */
+@media (max-width: 64em) {
+	/* back to the top button */
+	#top-button {
+		bottom: 1em;
+		right: 1em;
+	}
+
+	/* PARALLAX headings */
+	h2 {
+		margin: 2em;
+	}
 }
 
-/* WIP WIP WIP */
-/* Turn off parallax scrolling for tablets and phones */
-@media screen and (max-width: 425px) {
+/* tablet styles */
+/* max-width 48em (768px) */
+@media (max-width: 48em) {
+	/* back to the top button */
+	#top-button {
+		bottom: 0.75em;
+		right: 0.75em;
+	}
+	/* PARALLAX headings */
+	h2 {
+		margin: 1.5em;
+	}
+}
+
+/* mobile styles */
+/* max-width 26.5625em (425px) */
+/* turn off parallax scrolling for mobile */
+@media (max-width: 26.5625em) {
+	/* back to the top button */
+	#top-button {
+		bottom: 0.5em;
+		right: 0.5em;
+	}
+	/* PARALLAX */
+	/* first parallax section */
 	.parallax-img-1,
+	/* second parallax section */
 	.parallax-img-2,
+	/* third parallax section */
 	.parallax-img-3 {
 		background-attachment: scroll;
+	}
+	/* PARALLAX headings */
+	h1 {
+		font-size: 6em;
+	}
+	h2 {
+		margin: 1em;
 	}
 }
